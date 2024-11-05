@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.jfif" alt="Logo">Health Monitoring System
+            </div>
+            <nav class="nav">
+                <i class="fas fa-bars nav-logo" id="mobile_nav"></i>
+                <ul class="nav-panel">
+                    <li><a href="account/login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="#"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Health Statement</h1>
+                        <p>Access both summary and detailed health statement on your dashboard.</p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="htbt.html">
+                            <div class="btn">
+                                <i class="fas fa-thermometer"></i>
+                                <div class="card-divider"></div>
+                                <p>Track My Health</p>
+                            </div>
+                        </a>
+                        <div class="btn" onclick="closePopup()">
+                            <i class="fas fa-ambulance"></i>
+                            <div class="card-divider"></div>
+                            <p>How to Guide</p>
+                        </div>
+                        <div class="btn">
+                            <i class="fas fa-user"></i>
+                            <div class="card-divider"></div>
+                            <p>Create Account</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="emergency_btn">
+        <i class="fab fa-whatsapp" id="sendLocationButton"></i>
+        <div class="emergency_msg">
+            <i></i>
+            <!-- /YS_QUIZ_PUBLIC_URL: 'https://hrfocusuniverse.com/gtp/wp-content/plugins/quiz-maker/public -->
+            <p>
+                <h3>
+                    Your Request has been sent.
+                </h3>
+                calm down we'll come to your aid as soon as posible
+            </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <img src="uenr.jpeg" alt="Logo">
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Data Privacy Policy</a></li>
+                <li><a href="#">Hospital Smart Refer Guidelines</a></li>
+            </ul>
+            <p>Contact: 0243023066 | Email: callcenter@hospitalsmartrefer.com</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+    <script src="nav_controller.js"></script>
+</body>
+</html>
+    <style>
+
+.pop_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup {
+    background: #fff;
+    width: 50%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+}
+
+.popup-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-content ol {
+    padding-left: 20px;
+}
+
+.popup-content ol li {
+    margin-bottom: 10px;
+}
+
+.popup-content ul {
+    padding-left: 20px;
+}
+
+.popup-content ul li {
+    margin-bottom: 10px;
+}
+
+.popup-content a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.popup-content a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .popup {
+        width: 90%;
+    }
+}
+
+    </style>
+
+    <div class="pop_overlay">
+        <div class="popup">
+            <div class="popup-header">
+                <button class="nav-btn prev-btn" onclick="prevPage()">❮</button>
+                <h2>CREATE AN ACCOUNT</h2>
+                <button class="close-btn" onclick="closePopup()">✖</button>
+                <button class="nav-btn next-btn" onclick="nextPage()">❯</button>
+            </div>
+            <div class="popup-content">
+                <ol>
+                    <li>Click on the <a href="#">Signup button</a></li>
+                    <li>You may read the legal notice and click on <strong>Agree</strong>, that is if you agree.</li>
+                    <li>Fill in the required information and click on <strong>Next</strong></li>
+                    <li>On <strong>user account info</strong> page, tick the box <strong>"I agree to terms of service"</strong> and click on <strong>Create Account button</strong></li>
+                    <li>
+                        Once you create your account successfully, you will receive an activation code on your phone number or email. Input the code you received in the textbox and click on <strong>Activate Account button</strong>
+                    </li>
+                </ol>
+                <p><strong>NB:</strong></p>
+                <ul>
+                    <li>If for any reason you did not receive your activation code after 24 hours, kindly contact the nearest office for assistance.</li>
+                    <li>Note that any activation code sent to you expires after 48 hours.</li>
+                    <li>Also make sure you enter your correct active phone number and email address should be in small letters to receive the activation code.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function closePopup() {
+            if(document.querySelector('.pop_overlay').style.display == 'none'){
+                document.querySelector('.pop_overlay').style.display = 'flex';
+
+            }else{
+                document.querySelector('.pop_overlay').style.display = 'none';
+
+            }
+        }
+
+        function nextPage() {
+            // Add functionality to navigate to the next page
+            alert("Next Page");
+        }
+
+        function prevPage() {
+            // Add functionality to navigate to the previous page
+            alert("Previous Page");
+        }
+
+    </script>
+

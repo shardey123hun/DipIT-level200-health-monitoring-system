@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Health Graph - Smart Hospital Referral System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="content">
+        <h2>Patient Health Metrics</h2>
+        <div class="chart-container">
+            <canvas id="healthMetricsChart"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('healthMetricsChart').getContext('2d');
+    const healthMetricsChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Example months
+            datasets: [
+                {
+                    label: 'Heart Rate (bpm)',
+                    data: [70, 72, 75, 78, 80, 76, 74, 73, 70, 72, 75, 78], // Example data
+                    borderColor: '#f44336',
+                    backgroundColor: 'rgba(244, 67, 54, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                },
+                {
+                    label: 'Temperature (°C)',
+                    data: [36.5, 36.6, 36.7, 36.8, 36.9, 37.0, 36.8, 36.7, 36.5, 36.6, 36.7, 36.8], // Example data
+                    borderColor: '#4caf50',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                },
+                {
+                    label: 'Blood Pressure (mmHg)',
+                    data: [120, 122, 125, 128, 130, 126, 124, 123, 120, 122, 125, 128], // Example data
+                    borderColor: '#2196f3',
+                    backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.dataset.label}: ${context.raw}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

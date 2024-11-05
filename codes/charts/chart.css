@@ -1,0 +1,35 @@
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding: 20px 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.chart {
+    flex: 1;
+    padding: 10px;
+}
+
+.chart canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media (max-width:720px) {
+    .chart-container {
+        display: block;
+        width: 85%;
+    }
+    .content {
+        padding: 5px;
+    }
+}

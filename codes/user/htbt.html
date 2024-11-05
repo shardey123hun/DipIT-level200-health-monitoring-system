@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingertip Heart Rate Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkYiyOU83FO0PsvD6cJW6DB9sySofT3Q0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #video {
+        border: 2px solid #333;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+
+    #heartRate {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    button {
+        margin-top: 0;
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        background-color: #333;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    #map {
+        border: 2px solid #333;
+        border-radius: 10px;
+    }
+
+    #heartRateChart {
+        margin-top: 20px;
+        border: 2px solid #333;
+        border-radius: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-header">
+            <img src="../logo.jfif" alt="SLAS Logo" class="nav-logo">
+            <h1 class="nav-title">Health Monitoring System</h1>
+        </div>
+        <div class="user-info">
+            <i class=" fas fa-bell"></i>
+            <span>                    <span><?=$_SESSION['name']?></span>
+</span>
+            <img src="../bg1.jpg" alt="User Profile" class="user-profile">
+        </div>
+    </header>
+    <h1>Fingertip Heart Rate Monitor</h1>
+
+    <canvas id="heartRateChart" width="400" height="200"></canvas>
+    <p id="heartRate">Heart Rate: -- bpm</p>
+    <div class="controls">
+        <button id="startButton">Start Monitoring</button>
+        <video id="video" width="160" height="120" autoplay></video>
+        <button id="sendLocationButton" onclick="switchcamera()">Send Location</button>
+    </div>
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15828.166301240928!2d-2.343367!3d7.3492284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdac92a170803d7%3A0x6b48d01bcca4224a!2sUniversity%20of%20Energy%20and%20Natural%20Resources!5e0!3m2!1sen!2sgh!4v1689357442407!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+    <div id="map" style="height: 400px; width: 100%; margin-top: 20px;"></div>
+    <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+
+    <script src="heartRateMonitor.js"></script>
+</body>
+</html>
